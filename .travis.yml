@@ -1,0 +1,8 @@
+deploy:
+  provider: firebase
+  project: default
+  skip_cleanup: true
+  on:
+    branch: master
+  token:
+    secure: g+NRcz+kR5nE9nIRCi+t5YAHmY3Ah5DvXO2+r7qrNdmdJAC1hFwabBLvmlF5xptKMaq0gW1uZb94fiH4HPmr4gb75xB6cbHueoSef1+P2dZKZC5qNTp8e1iCbN2A4cA/Dxf/WzhoKlBLBsbJqYfK/Y1e+Kk2HWaGSq0yoo+8MDwWmgbafubgEKNNGeumQhXRdK9dGdabipthwXWcXWNiqQ+T8MRen84z7wzBJiS6mJMr6aP497uMbk0Sx4FCoiyEg+OiEbtIMQhz9GG1wM0hHXHt99vYPQpIfb/h20JHisOBzO5vjaQG9daxDjANy9jI5QKYQAQEF/0ngJnlJ9I8FY3KpYLE5hZbGLhiL7KM2LOXkDD3Vs8UO56PKcC/mByBZYx8iQmAAq1cW3N/lFY6XTMvAw9TShPYivz6u714JYXYoP6zMesjv1oY4rUEUXP2KS7yxxBqdzF1uBNVYNG3RAbBGVbOsmarugtn9IJX5fnd+fiyi0WXfgbiICQf8Lf5dgD+SrDqoBOGMAi0psbn1uAI+eU+nmpHenhv6oBwkuLrjjo0/kQmKhGrSriyKSQLXxF+g1/j2ZQqogUY39x0wSvqLQGcPgCnIsjZBIX8lhGbUcoC/ukEeoc0JSHTqE3/UpR0Mr+lDYL/1XgdI0cdXbWHQTN6/sDhZA8YP+YTnu4=
