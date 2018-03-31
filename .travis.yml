@@ -1,3 +1,5 @@
+language: c
+
 deploy:
   provider: firebase
   project: default
