@@ -1,4 +1,7 @@
-language: node_js
+language: c
+
+script:
+  - echo "Hello world!"
 
 deploy:
   provider: firebase
