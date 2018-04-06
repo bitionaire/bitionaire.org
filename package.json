@@ -23,7 +23,6 @@
     "@types/react-dom": "^16.0.4",
     "node-sass-chokidar": "^1.2.2",
     "npm-run-all": "^4.1.2",
-    "svg-inline-loader": "^0.8.0",
     "typescript": "^2.8.1"
   }
 }

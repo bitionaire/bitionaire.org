@@ -1,22 +1,51 @@
 @import '../../styles/colors.scss';
 @import '../../styles/dimensions.scss';
 
+$footer__interactive__background-color: mix($color__black, $color__highlight--darken, 20%);
 
 .footer {
   display: flex;
   flex-direction: column;
   align-items: center;
 
-  background: $color__black;
+  background: linear-gradient(to bottom, darken($color__highlight--darken, 7%), $color__highlight--darken 2em);;
   color: $color__white;
 
   padding: 6em 0;
 }
 
+.footer__name {
+  font-size: 24px;
+  letter-spacing: .025em;
+  margin: 0;
+}
+
+.footer__mail {
+  font-size: 16px;
+  letter-spacing: .025em;
+  margin-top: 1em;
+  border-radius: 2px;
+  padding: $padding__default--vertical $padding__default;
+  outline: none;
+  transition: background-color .4s ease-in-out, color .4s ease-in-out;
+}
+
+.footer__mail:link {
+  color: $color__white;
+  background-color: $footer__interactive__background-color;
+}
+
+.footer__mail:active,
+.footer__mail:focus,
+.footer__mail:hover {
+  color: $color__white;
+  background: $color__highlight;
+}
+
 .footer__contact-list {
   list-style: none;
   padding: 0;
-  margin-top: 4em;
+  margin-top: 3em;
 }
 
 .footer__contact-list-item {
@@ -24,22 +53,32 @@
 }
 
 .footer__contact-list-item + .footer__contact-list-item {
-  margin-left: 1em;
+  margin-left: .5em;
 }
 
 .footer__brand-link {
   display: block;
 }
 
-.footer__brand-link:hover svg path {
-  fill: $color__highlight !important;
+.footer__brand-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0 solid;
+  border-radius: 50%;
+  width: 4em;
+  height: 4em;
+  background: $footer__interactive__background-color;
+  transition: background-color .4s ease-in-out;
+  outline: none;
 }
 
-.footer__contact-brand-logo > svg path {
-  transition: fill .4s ease-in-out;
+.footer__brand-link:focus,
+.footer__brand-link:hover {
+  background: $color__highlight;
 }
 
-.footer__contact-brand-logo > svg {
+.footer__contact-brand-logo {
   width: 2em;
   height: 2em;
 }
