@@ -1,0 +1,83 @@
+@import '../../styles/colors.scss';
+@import '../../styles/dimensions.scss';
+@import '../../styles/responsive.scss';
+
+$stage__alias__padding: $padding__default--vertical;
+$stage__alias__padding-left: 4 * $stage__alias__padding;
+
+.about-me {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  background: $color__white;
+  color: $color__black;
+}
+
+.about-me__text {
+  flex: $golden-ratio__number__long-side 0 0;
+}
+
+.about-me__text > p {
+  padding: $padding__default;
+  margin: 0;
+  line-height: $golden-ratio__number__long-side;
+  text-align: justify;
+}
+
+.about-me__aside {
+  flex: $golden-ratio__number__short-side 0 0;
+  order: -1;
+  padding-top: 10vw;
+  padding-left: $padding__default;
+}
+
+.about-me__aside > h1 {
+  font-size: 48px;
+  font-weight: bold;
+  letter-spacing: .025em;
+  margin: 0;
+}
+
+.about-me__heading-underline {
+  position: relative;
+  background: $color__highlight;
+  height: 2em;
+  width: 100%;
+}
+
+.about-me__heading-underline::before {
+  content: ' ';
+  position: absolute;
+  right: -$size__triangle;
+  top: 0;
+  width: $size__triangle;
+  height: 2 * $padding__default--vertical + 1em;
+  background: $color__highlight;
+}
+
+.about-me__heading-underline::after {
+  content: ' ';
+  position: absolute;
+  right: -$size__triangle;
+  top: 2*$padding__default--vertical+1em;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: $size__triangle $size__triangle 0 0 ;
+  border-color: $color__highlight--darken transparent transparent transparent ;
+}
+
+@media #{$display__tablet} {
+  .about-me {
+    flex-direction: row;
+  }
+
+  .about-me__text > p {
+    padding: 10vw;
+  }
+
+  .about-me__aside {
+    order: initial;
+  }
+}
