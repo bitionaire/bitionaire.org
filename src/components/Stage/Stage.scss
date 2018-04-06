@@ -1,4 +1,5 @@
 @import '../../styles/colors.scss';
+@import '../../styles/dimensions.scss';
 
 $stage__alias__padding: .5em;
 $stage__alias__padding-left: 4 * $stage__alias__padding;
@@ -16,7 +17,7 @@ $stage__alias__triangle-size: 2em;
 .stage__portrait {
   background: url('/portrait.jpg') no-repeat center center;
   background-size: auto 100vh;
-  flex: 1.618 0 0;
+  flex: $golden-ratio__number__long-side 0 0;
 }
 
 .stage__name {
@@ -32,7 +33,7 @@ $stage__alias__triangle-size: 2em;
 }
 
 .stage__content {
-  flex: 1 0 0;
+  flex: $golden-ratio__number__short-side 0 0;
   padding-top: 38.2vh;
 }
 

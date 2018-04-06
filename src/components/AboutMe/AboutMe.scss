@@ -1,0 +1,41 @@
+@import '../../styles/colors.scss';
+@import '../../styles/dimensions.scss';
+
+$stage__alias__padding: .5em;
+$stage__alias__padding-left: 4 * $stage__alias__padding;
+
+$stage__alias__triangle-size: 2em;
+
+.about-me {
+  display: flex;
+  min-height: 100vh;
+
+  background: $color__white;
+  color: $color__black;
+}
+
+.about-me__text {
+  flex: $golden-ratio__number__long-side 0 0;
+}
+
+.about-me__text > p {
+  padding: 10vw;
+}
+
+.about-me__aside {
+  flex: $golden-ratio__number__short-side 0 0;
+  padding-top: 10vw;
+}
+
+.about-me__aside > h1 {
+  font-size: 48px;
+  font-weight: bold;
+  letter-spacing: .025em;
+  margin: 0;
+}
+
+.about-me__heading-underline {
+  background: $color__highlight;
+  height: 2em;
+  width: 100%;
+}

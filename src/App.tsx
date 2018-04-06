@@ -1,4 +1,5 @@
 import * as React from 'react';
+import AboutMe from './components/AboutMe';
 import Stage from './components/Stage';
 import './App.css';
 
@@ -7,9 +8,7 @@ class App extends React.Component {
     return (
       <div className="app">
         <Stage />
-        <div>
-          Testfoo
-        </div>
+        <AboutMe />
       </div>
     );
   }
