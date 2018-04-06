@@ -1,10 +1,8 @@
 @import '../../styles/colors.scss';
 @import '../../styles/dimensions.scss';
 
-$stage__alias__padding: .5em;
+$stage__alias__padding: $padding__default--vertical;
 $stage__alias__padding-left: 4 * $stage__alias__padding;
-
-$stage__alias__triangle-size: 2em;
 
 .about-me {
   display: flex;
@@ -20,11 +18,13 @@ $stage__alias__triangle-size: 2em;
 
 .about-me__text > p {
   padding: 10vw;
+  text-align: justify;
 }
 
 .about-me__aside {
   flex: $golden-ratio__number__short-side 0 0;
   padding-top: 10vw;
+  padding-left: $padding__default;
 }
 
 .about-me__aside > h1 {
@@ -35,7 +35,30 @@ $stage__alias__triangle-size: 2em;
 }
 
 .about-me__heading-underline {
+  position: relative;
   background: $color__highlight;
   height: 2em;
   width: 100%;
+}
+
+.about-me__heading-underline::before {
+  content: ' ';
+  position: absolute;
+  right: -$size__triangle;
+  top: 0;
+  width: $size__triangle;
+  height: 2 * $padding__default--vertical + 1em;
+  background: $color__highlight;
+}
+
+.about-me__heading-underline::after {
+  content: ' ';
+  position: absolute;
+  right: -$size__triangle;
+  top: 2*$padding__default--vertical+1em;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: $size__triangle $size__triangle 0 0 ;
+  border-color: $color__highlight--darken transparent transparent transparent ;
 }

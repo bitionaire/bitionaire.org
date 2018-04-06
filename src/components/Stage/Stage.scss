@@ -1,11 +1,6 @@
 @import '../../styles/colors.scss';
 @import '../../styles/dimensions.scss';
 
-$stage__alias__padding: .5em;
-$stage__alias__padding-left: 4 * $stage__alias__padding;
-
-$stage__alias__triangle-size: 2em;
-
 .stage {
   display: flex;
   height: 100vh;
@@ -28,8 +23,8 @@ $stage__alias__triangle-size: 2em;
   color: $color__black;
 
   text-align: right;
-  padding-top: calc(38.2vh + #{$stage__alias__padding});
-  padding-right: 2 * $stage__alias__padding-left;
+  padding-top: calc(38.2vh + #{$padding__default--vertical});
+  padding-right: 2 * $padding__default;
 }
 
 .stage__content {
@@ -53,35 +48,35 @@ $stage__alias__triangle-size: 2em;
   background: $color__highlight;
 
   margin: 0;
-  padding: $stage__alias__padding 0 $stage__alias__padding $stage__alias__padding-left;
+  padding: $padding__default--vertical 0 $padding__default--vertical $padding__default;
 }
 
 .stage__alias::before {
   content: ' ';
   position: absolute;
-  left: -$stage__alias__triangle-size;
+  left: -$size__triangle;
   top: 0;
-  width: $stage__alias__triangle-size;
-  height: 2 * $stage__alias__padding + 1em;
+  width: $size__triangle;
+  height: 2 * $padding__default--vertical + 1em;
   background: $color__highlight;
 }
 
 .stage__alias::after {
   content: ' ';
   position: absolute;
-  left: -$stage__alias__triangle-size;
-  top: 2*$stage__alias__padding+1em;
+  left: -$size__triangle;
+  top: 2*$padding__default--vertical+1em;
   width: 0;
   height: 0;
   border-style: solid;
-  border-width: 0 $stage__alias__triangle-size $stage__alias__triangle-size 0;
+  border-width: 0 $size__triangle $size__triangle 0;
   border-color: transparent $color__highlight--darken transparent transparent;
 }
 
 .stage__attributes {
   list-style: none;
-  padding: 0 0 0 $stage__alias__padding-left;
-  margin: $stage__alias__triangle-size 0 0;
+  padding: 0 0 0 $padding__default;
+  margin: $size__triangle 0 0;
 }
 
 .stage__attribute-header {
