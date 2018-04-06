@@ -1,11 +1,13 @@
 @import '../../styles/colors.scss';
 @import '../../styles/dimensions.scss';
+@import '../../styles/responsive.scss';
 
 $stage__alias__padding: $padding__default--vertical;
 $stage__alias__padding-left: 4 * $stage__alias__padding;
 
 .about-me {
   display: flex;
+  flex-direction: column;
   min-height: 100vh;
 
   background: $color__white;
@@ -17,13 +19,15 @@ $stage__alias__padding-left: 4 * $stage__alias__padding;
 }
 
 .about-me__text > p {
-  padding: 10vw;
+  padding: $padding__default;
+  margin: 0;
   line-height: $golden-ratio__number__long-side;
   text-align: justify;
 }
 
 .about-me__aside {
   flex: $golden-ratio__number__short-side 0 0;
+  order: -1;
   padding-top: 10vw;
   padding-left: $padding__default;
 }
@@ -62,4 +66,18 @@ $stage__alias__padding-left: 4 * $stage__alias__padding;
   border-style: solid;
   border-width: $size__triangle $size__triangle 0 0 ;
   border-color: $color__highlight--darken transparent transparent transparent ;
+}
+
+@media #{$display__tablet} {
+  .about-me {
+    flex-direction: row;
+  }
+
+  .about-me__text > p {
+    padding: 10vw;
+  }
+
+  .about-me__aside {
+    order: initial;
+  }
 }

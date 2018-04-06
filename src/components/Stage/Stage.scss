@@ -1,8 +1,10 @@
 @import '../../styles/colors.scss';
 @import '../../styles/dimensions.scss';
+@import '../../styles/responsive.scss';
 
 .stage {
   display: flex;
+  flex-direction: column;
   height: 100vh;
 
   background: $color__black;
@@ -10,26 +12,44 @@
 }
 
 .stage__portrait {
+  position: relative;
   background: url('/portrait.jpg') no-repeat center center;
   background-size: auto 100vh;
-  flex: $golden-ratio__number__long-side 0 0;
+  flex: 1 0 0;
 }
 
 .stage__name {
+  position: absolute;
+  bottom: 0;
+  left: 38.2vw;
+  right: 0;
+  padding: $padding__default--vertical $padding__default;
+
   font-size: 16px;
   font-weight: normal;
+  line-height: 1;
   letter-spacing: .025em;
   margin: 0;
   color: $color__black;
+  background: $color__gray;
 
   text-align: right;
-  padding-top: calc(38.2vh + #{$padding__default--vertical});
-  padding-right: 2 * $padding__default;
+}
+
+.stage__name::before {
+  content: ' ';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: $size__triangle 0 0 $size__triangle;
+  border-color: transparent transparent transparent $color__highlight--darken;
 }
 
 .stage__content {
-  flex: $golden-ratio__number__short-side 0 0;
-  padding-top: 38.2vh;
+  flex: 1 0 0;
 }
 
 .stage__intro {
@@ -49,6 +69,8 @@
 
   margin: 0;
   padding: $padding__default--vertical 0 $padding__default--vertical $padding__default;
+
+  width: 38.2vw;
 }
 
 .stage__alias::before {
@@ -90,4 +112,37 @@
   font-weight: bold;
   letter-spacing: .025em;
   color: $color__highlight;
+}
+
+@media #{$display__tablet} {
+  .stage {
+    flex-direction: row;
+  }
+
+  .stage__portrait {
+    flex: $golden-ratio__number__long-side 0 0;
+  }
+
+  .stage__content {
+    flex: $golden-ratio__number__short-side 0 0;
+    padding-top: 38.2vh;
+  }
+
+  .stage__name {
+    background: none;
+
+    position: initial;
+    bottom: initial;
+    left: initial;
+    right: initial;
+    padding: calc(38.2vh + #{$padding__default--vertical}) 2 * $padding__default 0 0;
+  }
+
+  .stage__name::before {
+    content: none;
+  }
+
+  .stage__alias {
+    width: auto;
+  }
 }
