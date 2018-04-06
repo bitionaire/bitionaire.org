@@ -1,0 +1,97 @@
+@import '../../styles/colors.scss';
+
+$stage__alias__padding: .5em;
+$stage__alias__padding-left: 4 * $stage__alias__padding;
+
+$stage__alias__triangle-size: 2em;
+
+.stage {
+  display: flex;
+  height: 100vh;
+
+  background: $color__black;
+  color: $color__white;
+}
+
+.stage__portrait {
+  background: url('/portrait.jpg') no-repeat center center;
+  background-size: auto 100vh;
+  flex: 1.618 0 0;
+}
+
+.stage__name {
+  font-size: 16px;
+  font-weight: normal;
+  letter-spacing: .025em;
+  margin: 0;
+  color: $color__black;
+
+  text-align: right;
+  padding-top: calc(38.2vh + #{$stage__alias__padding});
+  padding-right: 2 * $stage__alias__padding-left;
+}
+
+.stage__content {
+  flex: 1 0 0;
+  padding-top: 38.2vh;
+}
+
+.stage__intro {
+  display: inline-flex;
+  flex-direction: column;
+}
+
+.stage__alias {
+  position: relative;
+
+  font-size: 16px;
+  line-height: 1;
+  font-weight: normal;
+  letter-spacing: .025em;
+
+  background: $color__highlight;
+
+  margin: 0;
+  padding: $stage__alias__padding 0 $stage__alias__padding $stage__alias__padding-left;
+}
+
+.stage__alias::before {
+  content: ' ';
+  position: absolute;
+  left: -$stage__alias__triangle-size;
+  top: 0;
+  width: $stage__alias__triangle-size;
+  height: 2 * $stage__alias__padding + 1em;
+  background: $color__highlight;
+}
+
+.stage__alias::after {
+  content: ' ';
+  position: absolute;
+  left: -$stage__alias__triangle-size;
+  top: 2*$stage__alias__padding+1em;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 $stage__alias__triangle-size $stage__alias__triangle-size 0;
+  border-color: transparent $color__highlight--darken transparent transparent;
+}
+
+.stage__attributes {
+  list-style: none;
+  padding: 0 0 0 $stage__alias__padding-left;
+  margin: $stage__alias__triangle-size 0 0;
+}
+
+.stage__attribute-header {
+  font-size: 48px;
+  font-weight: bold;
+  letter-spacing: .025em;
+}
+
+.stage__attribute-subheader {
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: .025em;
+  color: $color__highlight;
+}
