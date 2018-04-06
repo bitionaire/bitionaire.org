@@ -18,6 +18,7 @@ $stage__alias__padding-left: 4 * $stage__alias__padding;
 
 .about-me__text > p {
   padding: 10vw;
+  line-height: $golden-ratio__number__long-side;
   text-align: justify;
 }
 
