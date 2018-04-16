@@ -13,8 +13,8 @@
 
 .stage__portrait {
   position: relative;
-  background: url('/portrait.jpg') no-repeat center center;
-  background-size: auto 100vh;
+  background: url('/portrait.jpg') no-repeat bottom left;
+  background-size: cover;
   flex: 1 0 0;
 }
 
